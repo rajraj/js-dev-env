@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "description": "JavaScript development environment",
   "scripts": {
-    "prestart": "node build_scripts/startMessage.js",
+    "prestart": "babel-node build_scripts/startMessage.js",
     "start": "npm-run-all --parallel security-check open:src",
     "security-check": "nsp check",
-    "open:src": "node build_scripts/srcServer.js",
+    "open:src": "babel-node build_scripts/srcServer.js",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel"
   },
