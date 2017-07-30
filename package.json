@@ -2,7 +2,14 @@
   "name": "js-dev-env",
   "version": "0.0.1",
   "description": "JavaScript development environment",
-  "scripts": {},
+  "scripts": {
+    "prestart": "node build_scripts/startMessage.js",
+    "start": "npm-run-all --parallel security-check open:src",
+    "security-check": "nsp check",
+    "open:src": "node build_scripts/srcServer.js",
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel open:src localtunnel"
+  },
   "author": "Rajesh Rajappan",
   "license": "MIT",
   "dependencies": {
